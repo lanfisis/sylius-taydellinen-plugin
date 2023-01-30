@@ -1,0 +1,35 @@
+{% macro item(taxon) %}
+    {% import _self as macros %}
+
+    {% if taxon.enabledChildren|length > 0 %}
+        <li tabindex="0" {{ sylius_test_html_attribute('menu-item') }} class="flex flex-row justify-between">
+            <span class="whitespace-nowrap">{{ taxon.name }}</span>
+            <span class="lg:hidden">{{ heroicons('chevron-right', 5) }}</span>
+            <ul class="bg-base-100">
+                {% for childTaxon in taxon.enabledChildren %}
+                    {{ macros.item(childTaxon) }}
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li>
+            <a
+                href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}"
+                {{ sylius_test_html_attribute('menu-item') }}
+            >
+                {{ taxon.name }}
+            </a>
+        </li>
+    {% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+
+
+<ul class="menu lg:menu-horizontal text-base-content" {{ sylius_test_html_attribute('menu') }}>
+    {% for taxon in taxons %}
+        {{ macros.item(taxon) }}
+    {% endfor %}
+</ul>
+
+

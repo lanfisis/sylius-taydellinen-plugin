@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="{{ app.request.locale|slice(0, 2) }}" data-theme="retro">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{{ sylius.channel.name }}{% endblock %}</title>
+
+        {% block metatags %}
+        {% endblock %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="icon.png">
+
+        {% block stylesheets %}
+            {{ sylius_template_event('sylius.shop.layout.stylesheets') }}
+        {% endblock %}
+
+        <link rel="manifest" href="site.webmanifest">
+        <meta name="theme-color" content="#fafafa">
+    </head>
+
+    <body class="from-primary to-secondary bg-gradient-to-br">
+        {% block topbar %}
+            {{ sylius_template_event('taydellinen.shop.layout.topbar') }}
+        {% endblock %}
+
+        {% block header %}
+            {{ sylius_template_event('taydellinen.shop.layout.header') }}
+        {% endblock %}
+
+        <main class="container mx-auto">
+            <div class="hero text-accent-content">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <img src="https://api.lorem.space/image/shoes?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
+                    <div>
+                        <h1 class="text-5xl font-bold">Box Office News!</h1>
+                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <button class="btn btn-accent">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {% block footer %}
+            {% include '/Layout/_footer.html.twig' %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ sylius_template_event('sylius.shop.layout.javascripts') }}
+        {% endblock %}
+
+
+        {{ sylius_template_event('sylius.shop.layout.after_body') }}
+    </body>
+
+</html>

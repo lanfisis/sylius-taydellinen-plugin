@@ -1,0 +1,33 @@
+sylius_ui:
+    events:
+        taydellinen.shop.layout.header:
+            blocks:
+                taydellinen_topbar:
+                    template: "/Layout/_header.html.twig"
+        taydellinen.shop.layout.header.left:
+            blocks:
+                currency_switcher:
+                    template: "@SyliusShop/Layout/Header/_logo.html.twig"
+        taydellinen.shop.layout.header.center:
+            blocks:
+                currency_switcher:
+                    template: "@SyliusShop/Layout/Header/_menu.html.twig"
+        taydellinen.shop.layout.header.right:
+            blocks:
+                currency_switcher:
+                    template: "@SyliusShop/Layout/Topbar/_currencySwitcher.html.twig"
+                    priority: 40
+                locale_switcher:
+                    template: "@SyliusShop/Layout/Topbar/_localeSwitcher.html.twig"
+                    priority: 30
+                user:
+                    template: "@SyliusShop/Layout/Topbar/_securityWidget.html.twig"
+                    priority: 20
+                cart:
+                    template: "@SyliusShop/Layout/Header/_cart.html.twig"
+                    priority: 10
+        taydellinen.shop.layout.topbar:
+            blocks:
+                taydellinen_topbar:
+                    template: "/Layout/_topbar.html.twig"
+

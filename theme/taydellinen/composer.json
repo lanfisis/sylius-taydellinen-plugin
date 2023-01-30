@@ -1,0 +1,11 @@
+{
+    "name": "monsieurbiz/taydellinen-theme",
+    "title": "Taydellinen",
+    "description": "A modern toolled theme for RAD in Sylius",
+    "authors": [
+        {
+            "name": "David Buros",
+            "email": "d.buros@monsieurbiz.com"
+        }
+    ]
+}

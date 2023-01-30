@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "taydellinen": {
+      "css": [
+        "/public/taydellinen.css"
+      ],
+      "js": [
+        "/public/taydellinen.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{#<div class="grid grid-cols-3 gap-4 px-8 py-2">#}
+{#    <div class="text-left">#}
+
+{#    </div>#}
+{#    <div class="text-center">#}
+{#        10 % off#}
+{#    </div>#}
+{#    <div class="text-right">#}
+{#        {% if is_granted('ROLE_USER') %}#}
+{#            <div class="item" {{ sylius_test_html_attribute('full-name') }}>{{ 'sylius.ui.hello'|trans }} {{ app.user.customer.fullName }}!</div>#}
+{#            <a href="{{ path('sylius_shop_account_dashboard') }}" >{{ 'sylius.ui.my_account'|trans }}</a>#}
+{#            <a href="{{ path('sylius_shop_logout') }}" {{ sylius_test_html_attribute('logout-button') }}>{{ 'sylius.ui.logout'|trans }}</a>#}
+{#        {% else %}#}
+{#            <a href="{{ path('sylius_shop_login') }}" >{{ 'sylius.ui.login'|trans }}</a>#}
+{#            <a href="{{ path('sylius_shop_register') }}" >{{ 'sylius.ui.register'|trans }}</a>#}
+{#        {% endif %}#}
+{#    </div>#}
+{#</div>#}
+<a class="btn btn-ghost" href="{{ is_granted('ROLE_USER') ? path('sylius_shop_account_dashboard') : path('sylius_shop_login') }}">
+    {{ heroicons('user', 5) }}
+</a>

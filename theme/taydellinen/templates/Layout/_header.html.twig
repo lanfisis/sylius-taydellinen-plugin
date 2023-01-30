@@ -1,0 +1,21 @@
+<div class="bg-base-200 text-base-content">
+    <div class="xl:container xl:mx-auto flex flex-wrap items-center justify-between p-2 lg:p-6 order-1">
+        <div class="lg:hidden">
+            <button class="btn btn-ghost">
+                {{ heroicons('menu', 5) }}
+            </button>
+        </div>
+        <div class="flex flex-1 lg:flex-none justify-center lg:justify-start order-2 ">
+            {{ sylius_template_event('taydellinen.shop.layout.header.left') }}
+        </div>
+        <div class="w-full h-screen lg:h-auto lg:flex lg:w-auto order-4 lg:order-3 lg:flex-1 justify-center">
+            {{ sylius_template_event('taydellinen.shop.layout.header.center') }}
+        </div>
+        <div class="flex justify-end order-3 lg:order-4">
+            {{ sylius_template_event('taydellinen.shop.layout.header.right') }}
+        </div>
+    </div>
+</div>
+
+
+

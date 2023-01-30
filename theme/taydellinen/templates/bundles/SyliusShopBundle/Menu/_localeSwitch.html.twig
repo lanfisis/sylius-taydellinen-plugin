@@ -1,0 +1,19 @@
+{% if locales|length > 1 %}
+    <div class="hidden lg:block dropdown" id="sylius-currency-selector" {{ sylius_test_html_attribute('locale-selector') }}>
+        <button class="btn btn-ghost" {{ sylius_test_html_attribute('active-locale') }}>{{ active }}</button>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100">
+            {% for code in locales %}
+                {% if code is not same as(active) %}
+                    <li>
+                        <a
+                            href="{{ path('sylius_shop_switch_locale', {'code': code}) }}"
+                            {{ sylius_test_html_attribute('available-locale') }}
+                        >
+                            {{ code }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

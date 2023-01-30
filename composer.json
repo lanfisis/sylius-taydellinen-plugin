@@ -1,0 +1,22 @@
+{
+    "name": "monsieurbiz/sylius-taydellinen-plugin",
+    "type": "sylius-plugin",
+    "keywords": ["sylius", "sylius-theme", "monsieurbiz"],
+    "description": "Add Editor.js in your Sylius application.",
+    "authors": [
+        {
+            "name": "David Buros"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "~7.4|~8.0",
+        "sylius/sylius": ">=1.8 <1.12"
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "MonsieurBiz\\SyliusTaydellinenPlugin\\": "src/"
+        }
+    }
+}
